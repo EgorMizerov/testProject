@@ -6,7 +6,7 @@ import (
 )
 
 type Hacker interface {
-	TestData(testTable map[string]float64) error
+	TestData() error
 	GetHackers() ([]domain.Hacker, error)
 }
 
