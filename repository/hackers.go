@@ -16,6 +16,7 @@ func NewHackerRedis(rdb *redis.Client) *HackerRedis {
 }
 
 var hackers = map[string]float64{
+	"Alan Turing":        1912,
 	"Richard Stallman":   1953,
 	"Alan Kay":           1940,
 	"Yukihiro Matsumoto": 1965,

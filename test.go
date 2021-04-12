@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	count := 10000
+	count := 100000
 	t := time.Now()
 
 	wg := sync.WaitGroup{}
