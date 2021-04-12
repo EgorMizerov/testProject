@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"fmt"
+	"context"
 	"github.com/go-redis/redis/v8"
 	"strings"
 )
@@ -14,12 +14,15 @@ type Config struct {
 
 func ConnectRedis(cfg Config) *redis.Client {
 	addr := strings.Join([]string{cfg.Host, cfg.Port}, ":")
-	fmt.Println(addr)
 	rdb := redis.NewClient(&redis.Options{
 		Addr:     addr,
 		Password: cfg.Password,
 		DB:       0,
 	})
+	err := rdb.Ping(context.TODO()).Err()
+	if err != nil {
+		panic(err.Error())
+	}
 
 	return rdb
 }

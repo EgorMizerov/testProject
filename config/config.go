@@ -7,6 +7,6 @@ var Redis = map[string]string{
 }
 
 var Server = map[string]string{
-	"host": "localhost",
+	"host": "",
 	"port": "8010",
 }
